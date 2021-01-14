@@ -1,21 +1,31 @@
-import React from 'react'; 
+import React, {useState, useEffect} from 'react'; 
 
 // import uncheckedBox from 'assets/uncheckedBox.png';
+import {updateTaskStatus} from 'utils/localStorage';
+const Task = ({taskList, taskObj, index}) => {
+	
+	const [task, updateTask] = useState(taskObj)
 
-const Task = ({taskObj}) => {
+	useEffect(() => {
+		updateTaskStatus(index, task, taskList);
+	}, [task, index, taskList])
 
 	function handleClickOnBox(){ 
 		console.log('check the box');
+		updateTask({
+			taskName: task.taskName, 
+			completed: !task.completed
+		})
 	}
 
 	return (
 		<div>
 			{
-				taskObj.completed ?
+				task.completed ?
 				<span className='taskBox' onClick={handleClickOnBox}>☑ </span>
 				:<span className='taskBox' onClick={handleClickOnBox}>□ </span>
 			}
-			<span className='taskName'>{taskObj.name}</span>
+			<span className='taskName'>{task.taskName}</span>
 		</div>
 	)
 }

@@ -1,32 +1,33 @@
 import React from 'react';
 
 import Task from 'components/task/task.component';
+import {getCurrentTasklist} from 'utils/firebase.js';
+import {getTaskList, saveTaskList, clearTaskList} from 'utils/localStorage';
 
-const tasks = [
-	{name: 'water the plant', 
-	completed: false, 
-	id: 0
-	},
-	{name: 'sweep the floor', 
-	completed: false, 
-	id: 1
-	},
-	{name: 'wash the dishes', 
-	completed: true, 
-	id: 2
-	},
-];
+// let tasks = getTaskList();
 
-const TaskList = () => {
-	return (
-		tasks.map( task => {
-			return (
-				<div key={task.id}>
-					<Task taskObj={task}/>
-					{/*<h4 className='task'>{task} </h4>*/}
-				</div>
-			)
-		}));	
+// const tasks = await getCurrentTasklistO();
+
+
+const TaskList = ({taskList}) => {
+	if (taskList){
+		return (
+			taskList.map((task, index) => {
+				return (
+					<div>
+						<div key={index}>
+							<Task taskObj={task} index={index} taskList={taskList}/>
+						</div>
+					</div>
+				)
+			})
+		)
+	} else {
+		return (
+			<p>Please add tasks!</p>
+		)
+	}
 }
 
 export default TaskList;
+
