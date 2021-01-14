@@ -4,9 +4,10 @@ import { saveNewTask } from 'utils/firebase';
 import TaskList from 'components/taskList/taskList.component';
 import {getTaskList, saveTaskList, clearTaskList} from 'utils/localStorage';
 
+
 // let tasks = getTaskList();
 
-const TaskInput = ({taskList}) => {
+const TaskManager = ({taskList}) => {
 
 	const [input, setInput] = useState('');
 	const [tasks, setTasks] = useState(taskList);
@@ -62,4 +63,4 @@ const TaskInput = ({taskList}) => {
 	)
 }
 
-export default TaskInput;
+export default TaskManager;
