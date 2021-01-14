@@ -1,0 +1,14 @@
+.taskBox {
+	cursor: pointer;
+	font-size: large;
+}
+
+.taskName { 
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
+
+.taskX{
+	cursor: pointer;
+}

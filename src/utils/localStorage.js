@@ -20,3 +20,14 @@ export const updateTaskStatus = (index, updatedTask, taskList) => {
 	console.log(taskList[index])
 }
 // clearTaskList();
+
+export const deleteTask = (index, taskList) => {
+	let tasks = [];
+	for (let i = 0; i < taskList.length; i++) {
+		if (i !== index) {
+			let item = taskList[i];
+			tasks.push(item);
+		} 
+	}
+	saveTaskList(tasks);
+}
