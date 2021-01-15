@@ -8,10 +8,10 @@ import rootReducer from './rootReducer';
 const sagaMiddleware = createSagaMiddleware();
 let middleware = [sagaMiddleware];
 
-if (process.env.NODE_ENV === 'development'){
-	let logger = require('redux-logger');
-	middleware= [...middleware, logger];
-}
+// if (process.env.NODE_ENV === 'development'){
+// 	let logger = require('redux-logger');
+// 	middleware= [...middleware, logger];
+// }
 
 const store = createStore(rootReducer, applyMiddleware(...middleware));
 
