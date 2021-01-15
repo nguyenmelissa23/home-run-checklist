@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "main": "server",
+	"engines": {
+    "node": "^12.18.3"
+  },
 	"homepage": "https://nguyenmelissa23.github.io/home-run-checklist/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
