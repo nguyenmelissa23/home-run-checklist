@@ -1,17 +1,18 @@
 import firebase from 'firebase/app';
 import 'firebase/auth'; 
 import 'firebase/firestore';
-
+import dotenv from 'dotenv';
 // import config from './config.json';
+dotenv.config({path: './firebase.config.env'});
 
 const firebaseConfig = {
-	"apiKey": "AIzaSyDOqH0DOtwWNAxgdAi5pAgw9BpXeU3p9EQ",	
-  "authDomain": "train-time-2ed45.firebaseapp.com",
-  "databaseURL": "https://train-time-2ed45.firebaseio.com",
-  "projectId": "train-time-2ed45",
-  "storageBucket": "train-time-2ed45.appspot.com",
-  "messagingSenderId": "914003238583",
-  "appId": "1:914003238583:web:20c9433f7d1a07fe137732"
+	"apiKey": process.env.apiKey,
+  "authDomain": process.env.authDomain,
+  "databaseURL": process.env.databaseURL,
+  "projectId": process.env.projectId,
+  "storageBucket": process.env.storageBucket,
+  "messagingSenderId": process.env.messagingSenderId,
+  "appId": process.env.appId
 }	;
 
 firebase.initializeApp(firebaseConfig);
