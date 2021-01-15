@@ -4,7 +4,8 @@
   "private": true,
   "main": "server",
 	"engines": {
-    "node": "^12.18.3"
+    "node": "^12.18.3", 
+		"npm": "^7.3.0"
   },
 	"homepage": "https://nguyenmelissa23.github.io/home-run-checklist/",
   "dependencies": {

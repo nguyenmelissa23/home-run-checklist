@@ -2,17 +2,17 @@ import firebase from 'firebase/app';
 import 'firebase/auth'; 
 import 'firebase/firestore';
 
-import config from './config.json';
+// import config from './config.json';
 
 const firebaseConfig = {
-  apiKey: config.apiKey,
-  authDomain: config.authDomain,
-  databaseURL: config.databaseURL,
-  projectId: config.projectId,
-  storageBucket: config.storageBucket,
-  messagingSenderId: config.messagingSenderId,
-  appId: config.appId
-};
+	"apiKey": "AIzaSyDOqH0DOtwWNAxgdAi5pAgw9BpXeU3p9EQ",	
+  "authDomain": "train-time-2ed45.firebaseapp.com",
+  "databaseURL": "https://train-time-2ed45.firebaseio.com",
+  "projectId": "train-time-2ed45",
+  "storageBucket": "train-time-2ed45.appspot.com",
+  "messagingSenderId": "914003238583",
+  "appId": "1:914003238583:web:20c9433f7d1a07fe137732"
+}	;
 
 firebase.initializeApp(firebaseConfig);
 
