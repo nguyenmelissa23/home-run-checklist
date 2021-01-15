@@ -1,5 +1,4 @@
 import {createStore, applyMiddleware} from 'redux';
-import logger from 'redux-logger';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 
@@ -10,6 +9,7 @@ const sagaMiddleware = createSagaMiddleware();
 let middleware = [sagaMiddleware];
 
 if (process.env.NODE_ENV === 'development'){
+	let logger = require('redux-logger');
 	middleware= [...middleware, logger];
 }
 
